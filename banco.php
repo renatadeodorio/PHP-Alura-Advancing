@@ -4,6 +4,13 @@ function exibeMensagem($mensagem){
     echo $mensagem . PHP_EOL;
 }
 
+function depositar($conta, $valorADepositar) {
+  $conta['saldo'] += $valorADepositar;
+
+  return $conta;
+
+}
+
 function sacar($conta, $valorASacar)
 {
     if ($valorASacar > $conta['saldo']) {
@@ -32,6 +39,7 @@ $contasCorrentes = [
 
 
 $contasCorrentes['123.456.789-10'] = sacar($contasCorrentes['123.456.789-10'], 500);
+$contasCorrentes['123.256.789-12'] = depositar($contasCorrentes['123.256.789-12'],900);
 
 foreach ($contasCorrentes as $cpf => $conta) {
     exibeMensagem($cpf . " " . $conta['titular'] . ' ' . $conta['saldo']);

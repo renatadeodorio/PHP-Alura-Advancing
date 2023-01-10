@@ -36,3 +36,8 @@ $contasCorrentes['123.456.789-10'] = sacar($contasCorrentes['123.456.789-10'], 5
 foreach ($contasCorrentes as $cpf => $conta) {
     exibeMensagem($cpf . " " . $conta['titular'] . ' ' . $conta['saldo']);
 }
+
+
+/*Uma função retorna um valor, ou seja, a chamada da função representa um valor após sua execução.
+ Uma subrotina apenas executa um código isolado, sem retornar nenhum valor.
+ */
